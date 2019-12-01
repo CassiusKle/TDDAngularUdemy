@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RecipeBookComponent } from './recipe-book.component';
 import { By } from '@angular/platform-browser';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { MockComponent } from 'ng-mocks';
 
 describe('RecipeBookComponent', () => {
   let component: RecipeBookComponent;
@@ -12,8 +12,8 @@ describe('RecipeBookComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ RecipeBookComponent,
-      RecipeListComponent,
-      RecipeDetailComponent
+      MockComponent(RecipeListComponent),
+      MockComponent(RecipeDetailComponent)
     ]
     })
     .compileComponents();
