@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-recipe-book',
   templateUrl: './recipe-book.component.html',
-  styleUrls: ['./recipe-book.component.css']
+  styleUrls: ['./recipe-book.component.less']
 })
 export class RecipeBookComponent implements OnInit {
 
