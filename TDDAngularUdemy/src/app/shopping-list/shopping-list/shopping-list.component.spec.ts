@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShoppingListComponent } from './shopping-list.component';
+import { By } from '@angular/platform-browser';
+import { ShoppingListEditComponent } from '../shopping-list-edit/shopping-list-edit.component';
+import { MockComponent } from 'ng-mocks';
 
 describe('ShoppingListComponent', () => {
   let component: ShoppingListComponent;
@@ -8,7 +11,8 @@ describe('ShoppingListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShoppingListComponent ]
+      declarations: [ ShoppingListComponent,
+      MockComponent(ShoppingListEditComponent) ]
     })
     .compileComponents();
   }));
@@ -21,5 +25,10 @@ describe('ShoppingListComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have shoppingEditComponent', () => {
+    const editComp = fixture.debugElement.query(By.directive(ShoppingListEditComponent));
+    expect(editComp).not.toBeNull();
   });
 });
